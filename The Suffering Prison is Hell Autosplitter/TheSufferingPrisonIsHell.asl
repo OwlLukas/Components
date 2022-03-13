@@ -12,53 +12,53 @@
 //All-in-One fix by UCyborg that is build on top of the 1.1 patch. (AiO 1.0.4) (Exe version 1.1.0.1)
 state("Suffering", "AiO")
 {
-	byte missioNumber: 			"Suffering.rfl", 0x178660;					//Displays the current mission number. (Changes before the loading screen).
-	byte isMainMenu:			"Suffering.rfl", 0x178520;					//Game is currently in the main menu.
-    byte isCutsceneActive: 		"Suffering.rfl", 0x17BF30, 0x34;			//Indicates if a cutscene is currently playing (Flashback and visions excluded).
-	byte loading: 				"Suffering.rfl", 0x17BBFE;					//During loads of any kind this seems to switch between 3 values that seem to be chapter-unique.
+	byte missioNumber: 		"Suffering.rfl", 0x178660;					//Displays the current mission number. (Changes before the loading screen).
+	byte isMainMenu:		"Suffering.rfl", 0x178520;					//Game is currently in the main menu.
+    	byte isCutsceneActive: 		"Suffering.rfl", 0x17BF30, 0x34;				//Indicates if a cutscene is currently playing (Flashback and visions excluded).
+	byte loading: 			"Suffering.rfl", 0x17BBFE;					//During loads of any kind this seems to switch between 3 values that seem to be chapter-unique.
 	byte isPausedOrMainMenu: 	"Suffering.exe", 0x1C9C52;					//Game is currently either paused or inside the main menu.
 	float progressCoordinate:	"Suffering.exe", 0x1CA988;					//Level coordinate indicating progress.
 	byte isFlashbackActive: 	"wmvdecod.dll",  0x218004;					//Game is currenlty displaying a flashback (Cutscenes and Visions excluded).
-	string25 FileLevel:			"Suffering.exe", 0x1C6B1C;					//Contains the current level name. Not a perfectly cropped string, but works fine.
+	string25 FileLevel:		"Suffering.exe", 0x1C6B1C;					//Contains the current level name. Not a perfectly cropped string, but works fine.
 }
 
 //1.1 Version from gog (Exe version 1.1.0.1)
 state("SUFFERING", "GoG Patch 1.1.0.1")
 {
-	byte missioNumber: 			"Suffering.rfl", 0x178660;
-	byte isMainMenu:			"Suffering.rfl", 0x178520;
-    byte isCutsceneActive: 		"Suffering.rfl", 0x17BF30, 0x34;
-	byte loading: 				"Suffering.rfl", 0x17BBFE;
+	byte missioNumber: 		"Suffering.rfl", 0x178660;
+	byte isMainMenu:		"Suffering.rfl", 0x178520;
+    	byte isCutsceneActive: 		"Suffering.rfl", 0x17BF30, 0x34;
+	byte loading: 			"Suffering.rfl", 0x17BBFE;
 	byte isPausedOrMainMenu: 	"Suffering.exe", 0x1C9C52;
 	float progressCoordinate:	"Suffering.exe", 0x1CA988;
 	byte isFlashbackActive: 	"wmvdecod.dll",  0x218004;
-	string25 FileLevel:			"Suffering.exe", 0x1C6B1C;
+	string25 FileLevel:		"Suffering.exe", 0x1C6B1C;
 }
 
 //Retail version (Exe version 1.0.0.1)
 state("SUFFERING", "Retail Patch 1.0.0.1")
 {
-	byte missioNumber: 			"Suffering.rfl", 0x178660;
-	byte isMainMenu:			"Suffering.rfl", 0x178520;
-    byte isCutsceneActive: 		"Suffering.rfl", 0x17BF30, 0x34;
-	byte loading: 				"Suffering.rfl", 0x17BBFE;
+	byte missioNumber: 		"Suffering.rfl", 0x178660;
+	byte isMainMenu:		"Suffering.rfl", 0x178520;
+    	byte isCutsceneActive: 		"Suffering.rfl", 0x17BF30, 0x34;
+	byte loading: 			"Suffering.rfl", 0x17BBFE;
 	byte isPausedOrMainMenu: 	"Suffering.exe", 0x1C9C52;
 	float progressCoordinate:	"Suffering.exe", 0x1CA988;
 	byte isFlashbackActive: 	"wmvdecod.dll",  0x218004;
-	string25 FileLevel:			"Suffering.exe", 0x1C6B1C;
+	string25 FileLevel:		"Suffering.exe", 0x1C6B1C;
 }
 
 //All the other versions (Air-Force, pirated etc.)
 state("SUFFERING", "Unknown")
 {
-	byte missioNumber: 			"Suffering.rfl", 0x178660;
-	byte isMainMenu:			"Suffering.rfl", 0x178520;
-    byte isCutsceneActive: 		"Suffering.rfl", 0x17BF30, 0x34;
-	byte loading: 				"Suffering.rfl", 0x17BBFE;
+	byte missioNumber: 		"Suffering.rfl", 0x178660;
+	byte isMainMenu:		"Suffering.rfl", 0x178520;
+    	byte isCutsceneActive: 		"Suffering.rfl", 0x17BF30, 0x34;
+	byte loading: 			"Suffering.rfl", 0x17BBFE;
 	byte isPausedOrMainMenu: 	"Suffering.exe", 0x1C9C52;
 	float progressCoordinate:	"Suffering.exe", 0x1CA988;
 	byte isFlashbackActive: 	"wmvdecod.dll",  0x218004;
-	string25 FileLevel:			"Suffering.exe", 0x1C6B1C;
+	string25 FileLevel:		"Suffering.exe", 0x1C6B1C;
 }
 
 startup
@@ -107,16 +107,16 @@ init
 	switch (modules.First().ModuleMemorySize) 
 	{
 
-    case 3117056: version = "AiO";										//1,845 KB
-		break;
+    	case 3117056: version = "AiO";								//1,845 KB
+	break;
 
-    case 3109886: version = "GoG Patch 1.1.0.1";						//1,842 KB
+    	case 3109886: version = "GoG Patch 1.1.0.1";						//1,842 KB
       	break;
 
 	case 3194880: version = "Retail Patch 1.0.0.1";						//3,091 KB
       	break;
 
-    default: version = "Unknown";										//Else
+    	default: version = "Unknown";								//Else
       	break;
 
   	}
