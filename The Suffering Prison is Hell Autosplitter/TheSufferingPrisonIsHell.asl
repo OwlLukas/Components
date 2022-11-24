@@ -22,7 +22,7 @@ state("Suffering")
 	byte     loading            : "Suffering.rfl", 0x17BBFE;       // During loads of any kind this seems to switch between 3 values that seem to be chapter-unique.
 	byte     isPausedOrMainMenu : "Suffering.exe", 0x1C9C52;       // Game is currently either paused or inside the main menu.
 	float    progressCoordinate : "Suffering.exe", 0x1CA988;       // Level coordinate indicating progress.
-	byte     isFlashbackActive  : "wmvdecod.dll",  0x218004;       // Game is currenlty displaying a flashback (Cutscenes and Visions excluded).
+	byte     isFlashbackActive  : "wmvdecod.dll",  0x21B464;       // Game is currenlty displaying a flashback (Cutscenes and Visions excluded).
 	string25 fileLevel          : "Suffering.exe", 0x1C6B1C;       // Contains the current level name. Not a perfectly cropped string, but works fine.
 }
 
