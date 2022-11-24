@@ -79,7 +79,7 @@ split
 {
 
 	// Final level is unique with the progress coordinate.
-	if (current.missionNumber == 20  && old.isFlashbackActive == 0 && current.isFlashbackActive == 1 && current.missionNumber == 20 && current.progressCoordinate > 900000)
+	if (current.missionNumber == 20  && old.isFlashbackActive == 0 && current.isFlashbackActive == 1 && current.progressCoordinate > 900000)
 		return true;
 		
 	// Prevent splitting from loading savegames from the pause- or main menu.
