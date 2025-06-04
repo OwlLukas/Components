@@ -2,12 +2,15 @@
     ObsCure (2004) AutoSplitter by OwlLukas.
     If your game version does not work with this autospliter, or you get the "unknown" version, please contact me on discord or speedrun.com.
 
-    Updated V1.0
+    Update V1.0
         - Added Split options by room
         - Added Split options by FMV
         - Added Doorsplitter
         - Added Loadremover
         - Added Room and FMV list.
+
+    Update V1.1
+        - Fixed an the split section to properly split for each setting group.
 
 */
 
@@ -311,22 +314,34 @@ split
     }
 
     //Split the rooms
-    return ((settings[current.room] && old.room != current.room && (!vars.doneRooms.Contains(current.room))));
+    if (settings["RoomSplitter"] && settings[current.room] && old.room != current.room && !vars.doneRooms.Contains(current.room))
+    {
+        return true;
+    }
 
     //Split the FMV's
-    return (settings[current.fmv] && old.fmv != current.fmv && !vars.doneRooms.Contains(current.fmv));
+    if (settings["FMVSplitter"] && settings[current.fmv] && old.fmv != current.fmv && !vars.doneRooms.Contains(current.fmv))
+    {
+        return true;
+    }
 
     //Doorsplitter
-    if (settings["DoorSplitter"] && vars.skipFirstSplit == true)
+    if (settings["DoorSplitter"])
     {
-        vars.skipFirstSplit = false;
-        return false;
+        if (vars.skipFirstSplit == true)
+        {
+            vars.skipFirstSplit = false;
+            return false;
+        }
+        // Split the doors.
+        if (old.room != current.room)
+        {
+            return true;
+        }
     }
 
-    else
-    {
-        return current.room != old.room;
-    }
+     return false;
+
 
 }
 
