@@ -1,0 +1,10 @@
+<updates>
+    <update version="2026.2.7.0">
+        <files>
+            <file path="Tomb%20Raider%20Level%20Editor%20-%20Lost%20And%20Found/Components/TRLELostAndFoundv4.dll" localPath="Components/TRLELostAndFoundv4.dll" status="added"/>
+        </files>
+        <changelog>
+            <change>Initial release.</change>
+        </changelog>
+    </update>
+</updates>
